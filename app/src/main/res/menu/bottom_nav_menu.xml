@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/navigation_history"
+        android:icon="@drawable/ic_transaction"
+        android:title="History" />
+    <item
+        android:id="@+id/navigation_reward"
+        android:icon="@drawable/ic_reward"
+        android:title="Rewards" />
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_profile"
+        android:title="Profile" />
+</menu>

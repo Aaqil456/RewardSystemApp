@@ -1,0 +1,5 @@
+<!-- profile_circle_bg.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#E0E0E0"/> <!-- Replace with your desired color -->
+    <corners android:radius="60dp"/> <!-- Makes the image circular -->
+</shape>

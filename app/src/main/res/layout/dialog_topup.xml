@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/dialog_background">
+
+    <TextView
+        android:id="@+id/title_topup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Top-Up Balance"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:paddingBottom="8dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CCCCCC"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/topup_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter amount to top up:"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:paddingBottom="4dp" />
+
+    <EditText
+        android:id="@+id/topup_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Amount"
+        android:textColor="#000000"
+        android:inputType="numberDecimal"
+        android:background="@drawable/input_background"
+        android:padding="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/topup_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Top Up"
+        android:layout_margin="12dp"
+        android:background="@drawable/rounded_button"
+        android:textColor="#FFFFFF" />
+</LinearLayout>
