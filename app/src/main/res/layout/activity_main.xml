@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Welcome to the Main Menu!"
+            android:text="Welcome to TapauPoint"
             android:textColor="#000000"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -54,7 +54,7 @@
                 android:id="@+id/wallet_balance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="$0.00"
+                android:text="RM 0.00"
                 android:textColor="#000000"
                 android:textSize="18sp" />
 

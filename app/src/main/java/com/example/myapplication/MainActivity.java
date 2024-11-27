@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
                         if (documentSnapshot.exists()) {
                             Double userMoney = documentSnapshot.getDouble("userMoney");
                             Double rewardPoint = documentSnapshot.getDouble("rewardPoints");
-                            walletBalanceTextView.setText("Balance: $" + userMoney);
+                            walletBalanceTextView.setText("Balance: RM" + userMoney);
                             RewardPointTV.setText("Reward Points: " + rewardPoint);
                         }
                     })
@@ -246,7 +246,7 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
             db.collection("users").document(userId)
                     .update("userMoney", FieldValue.increment(amount))
                     .addOnSuccessListener(aVoid -> {
-                        Toast.makeText(MainActivity.this, "Wallet topped up with $" + amount, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Wallet topped up with RM" + amount, Toast.LENGTH_SHORT).show();
                         walletInfo(); // Reload the balance after topping up
                     })
                     .addOnFailureListener(e -> Toast.makeText(MainActivity.this, "Failed to top up wallet", Toast.LENGTH_SHORT).show());

@@ -238,16 +238,16 @@ public class ProfileActivity extends AppCompatActivity {
                             }
 
                             if (userMoney != null) {
-                                walletBalanceTextView.setText("Balance: $" + userMoney);
+                                walletBalanceTextView.setText("Balance: RM" + userMoney);
                                 UsernameTV.setText("Name: "+userName);
                                 AgeTv.setText("Age: "+userAge );
                                 RewardPointTV.setText("Reward Points: "+ rewardPoint);
                             } else {
-                                walletBalanceTextView.setText("Balance: $" + userMoney);
+                                walletBalanceTextView.setText("Balance: RM" + userMoney);
                                 UsernameTV.setText("Name: "+userName);
                                 AgeTv.setText("Age: "+userAge );
                                 RewardPointTV.setText("Reward Points: "+ rewardPoint);
-                                walletBalanceTextView.setText("Balance: $0.00");
+                                walletBalanceTextView.setText("Balance: RM0.00");
                             }
                         }
                     })
@@ -303,7 +303,7 @@ public class ProfileActivity extends AppCompatActivity {
             db.collection("users").document(userId)
                     .update("userMoney", FieldValue.increment(amount))
                     .addOnSuccessListener(aVoid -> {
-                        Toast.makeText(ProfileActivity.this, "Wallet topped up with $" + amount, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ProfileActivity.this, "Wallet topped up with RM" + amount, Toast.LENGTH_SHORT).show();
                         profileInfo(); // Reload the balance after topping up
                         loadProfileImage();
                     })
