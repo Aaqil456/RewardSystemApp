@@ -2,12 +2,17 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageSwitcher;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewSwitcher;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -34,6 +39,19 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
     private FirebaseFirestore db;
     private Button ScanBtn, topUpButton;
     private TextView walletBalanceTextView, RewardPointTV;
+    //image switcher
+    private int[] images = {
+            R.drawable.app_icon,
+            R.drawable.product1_image,
+            R.drawable.product2_image,
+            R.drawable.product3_image,
+            R.drawable.product4_image,
+            R.drawable.product5_image,
+            R.drawable.product6_image
+    };
+    private int currentIndex = 0;
+    private Handler handler = new Handler();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +63,24 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
         RewardPointTV = findViewById(R.id.tv_reward_points);
         topUpButton = findViewById(R.id.top_up_button);
         ScanBtn = findViewById(R.id.scan_to_buy_button);
+        ImageSwitcher imageSwitcher = findViewById(R.id.imageSwitcher);
+
+        // Set the factory for the ImageSwitcher
+        imageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
+            @Override
+            public View makeView() {
+                ImageView imageView = new ImageView(MainActivity.this);
+                imageView.setScaleType(ImageView.ScaleType.FIT_CENTER); // Prevent stretching
+                imageView.setAdjustViewBounds(true); // Maintain aspect ratio
+                return imageView;
+            }
+        });
+
+
+        // Start the slideshow
+        startSlideshow(imageSwitcher);
+
+
 
         // Initialize Firebase
         mAuth = FirebaseAuth.getInstance();
@@ -85,6 +121,19 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
         topUpButton.setOnClickListener(v -> showTopUpDialog());
         ScanBtn.setOnClickListener(v -> startQrScannerAndBuyRandomProduct());
     }
+
+    private void startSlideshow(ImageSwitcher imageSwitcher) {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                imageSwitcher.setImageResource(images[currentIndex]);
+                currentIndex = (currentIndex + 1) % images.length;
+                handler.postDelayed(this, 1000); // Change image every 3 seconds
+            }
+        }, 0);
+    }
+
+
 
     private void loadProducts() {
         // Example products (you can replace this with dynamic data)

@@ -24,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Name"
+            android:textColor="@color/black"
             android:textColorHint="#000000"
             android:inputType="textPersonName" />
 
@@ -32,6 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Age"
+            android:textColor="@color/black"
             android:textColorHint="#000000"
             android:inputType="number" />
 
