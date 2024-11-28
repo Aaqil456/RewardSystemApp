@@ -43,7 +43,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         String documentId = documentIds.get(position);
 
         holder.productNameTextView.setText(transaction.getProductName());
-        holder.productPriceTextView.setText("Price: $" + transaction.getProductPrice());
+        holder.productPriceTextView.setText("Price: RM" + transaction.getProductPrice());
 
         // Format the transaction date
         Timestamp timestamp = transaction.getTransactionDate();

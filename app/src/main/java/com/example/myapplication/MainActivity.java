@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
             @Override
             public View makeView() {
                 ImageView imageView = new ImageView(MainActivity.this);
-                imageView.setScaleType(ImageView.ScaleType.FIT_XY); // Stretch the image to fill the space
+                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP); // Stretch the image to fill the space
                 imageView.setAdjustViewBounds(false); // Ensure it doesn't maintain aspect ratio
                 return imageView;
             }
