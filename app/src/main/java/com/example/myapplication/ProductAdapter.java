@@ -37,7 +37,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Product product = productList.get(position);
         holder.nameTextView.setText(product.getName());
-        holder.priceTextView.setText(String.format("$%.2f", product.getPrice()));
+        holder.priceTextView.setText(String.format("RM%.2f", product.getPrice()));
         holder.imageView.setImageResource(product.getImageResource());
 
         holder.buyButton.setOnClickListener(v -> {

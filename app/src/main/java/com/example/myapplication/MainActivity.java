@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
     private TextView walletBalanceTextView, RewardPointTV;
     //image switcher
     private int[] images = {
-            R.drawable.app_icon,
             R.drawable.product1_image,
             R.drawable.product2_image,
             R.drawable.product3_image,

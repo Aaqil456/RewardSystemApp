@@ -86,7 +86,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
 
         // Populate the receipt fields
         receiptProductName.setText("Product Name: " + transaction.getProductName());
-        receiptPrice.setText("Price: $" + transaction.getProductPrice());
+        receiptPrice.setText("Price: RM" + transaction.getProductPrice());
         receiptDate.setText("Transaction Date: " + formattedDate);
         receiptTransactionId.setText("Transaction ID: " + lastFourDigits);
 
