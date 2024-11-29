@@ -206,7 +206,7 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
                                                     .update("rewardPoints", FieldValue.increment(productPrice))
                                                     .addOnSuccessListener(aVoid2 -> {
                                                         saveTransactionHistory(userId, product);
-                                                        Toast.makeText(MainActivity.this, "Purchase successful! Price deducted: $" + productPrice, Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(MainActivity.this, "Purchase successful! Price deducted: RM" + productPrice, Toast.LENGTH_SHORT).show();
                                                     })
                                                     .addOnFailureListener(e -> Toast.makeText(MainActivity.this, "Failed to update points", Toast.LENGTH_SHORT).show());
                                         })
